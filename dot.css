@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    cursor: default;
+}
+
+body,html {
+    height: 100% ;
+    font-family: "微软雅黑", helvetica, arial, sans-serif;
+}
+/* 标题提示信息 */
+.title {
+    position: absolute;
+    left: 45% ;
+    top: 20px;
+    font-size: 20px;
+}
+/* 核心容器，需要设置为 relative  */
+.container {
+    position: relative;
+    height: 100% ;
+    width: 100% ;
+    overflow: hidden;
+}
+/* 波纹样式及动画处理 */
+.dot {
+    position: absolute;
+    height: 2px;
+    width: 2px;
+    border-radius: 100% ;
+    z-index: 2;
+    animation: sploosh 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: transparent;
+}
+/* 动画处理细节 */
+@keyframes sploosh {
+    0% {
+        box-shadow: 0 0 0 0px rgba(66, 166, 223, 0.5);
+        background: rgba(66, 166, 223, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 300px rgba(66, 166, 223, 0);
+        background: rgba(66, 166, 223, 0);
+    }
+}
